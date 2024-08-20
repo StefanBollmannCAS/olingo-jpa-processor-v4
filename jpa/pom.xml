@@ -7,7 +7,7 @@
 	<version>2.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>odata-jpa</name>
-    <url>https://github.com/SAP/olingo-jpa-processor-v4</url>
+    <url>https://github.com/StefanBollmannCAS/olingo-jpa-processor-v4</url>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +39,12 @@
             ${project.basedir}/../odata-jpa-coverage/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
     </properties>
+    <repositories>
+	<repository>
+	    <id>jitpack.io</id>
+		 <url>https://jitpack.io</url>
+	 </repository>
+    </repositories>
     <profiles>
         <profile>
             <id>build.fast</id>
@@ -73,6 +79,11 @@
     </modules>
     <dependencyManagement>
         <dependencies>
+	    <dependency>
+	        <groupId>com.github.StefanBollmannCAS</groupId>
+	        <artifactId>olingo-jpa-processor-v4</artifactId>
+		<version>${project.version}</version>
+	    </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>odata-jpa-metadata</artifactId>
